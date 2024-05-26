@@ -1,0 +1,120 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="mfrmSystem.master.cs" 
+Inherits="Forms_MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="background-color: skyblue; text-align: left; background-image: url(../Images/Header.JPG); vertical-align: text-bottom;">
+        <strong>
+            <br />
+            <span style="font-size: 24pt; color: white;"><span style="font-size: 28pt; font-family: Constantia;">&nbsp;NITL Telco <span style="font-size: 32pt">1.0.1</span></span><br />
+            </span>
+            <br />
+        </strong>
+    </div>
+    <div style="background-color: whitesmoke;">
+        <table border="1" cellspacing="0" width="100%" style="border-top-style: none; border-right-style: none; border-left-style: none; border-bottom-style: none; table-layout: auto; border-collapse: collapse; height: 446px; font-size: 12pt;" frame="box">
+            <tr>
+                <td align=left valign=top style="width: 202px; height: 435px;">
+                    <asp:TreeView ID="TreeView1" runat="server" ShowLines="True" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                        <Nodes>
+                            <asp:TreeNode Text="NITL Telco Services" Value="nitlvp">
+                                <asp:TreeNode Text="System" Value="sys" Expanded="False">
+                                    <asp:TreeNode NavigateUrl="~/Forms/frmSysUsrGroup.aspx" Text="System User Group"
+                                        Value="sysug"></asp:TreeNode>
+                                    <asp:TreeNode Text="System Users" Value="sysu"></asp:TreeNode>
+                                    <asp:TreeNode Text="Change Pass" Value="chgpass"></asp:TreeNode>
+                                    <asp:TreeNode Text="System Audit" Value="syslq"></asp:TreeNode>
+                                    <asp:TreeNode Text="System Alarm" Value="sysErrLog" NavigateUrl="~/Forms/frmQuerySystemError.aspx"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Service &amp; Package" Value="pkgm" Expanded="False">
+                                    <asp:TreeNode Text="Manage Service Type"
+                                        Value="mngSrvType"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Services" Value="mngService" NavigateUrl="~/Forms/frmMngService.aspx"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/Forms/frmMngSrvRate.aspx" Text="Manage Service Rate"
+                                        Value="mngSrvRate"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Packages" Value="mngPackage" NavigateUrl="~/Forms/frmMngPackage.aspx"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Voucher" Value="vchrm" Expanded="False">
+                                    <asp:TreeNode NavigateUrl="~/Forms/frmVouDenomination.aspx" Text="Voucher Denomination"
+                                        Value="vouDenomination"></asp:TreeNode>
+                                    <asp:TreeNode Text="Voucher Generation" Value="vouGeneration" NavigateUrl="~/Forms/frmVoucherGeneration.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Voucher Activation" Value="vouActivation"></asp:TreeNode>
+                                    <asp:TreeNode Text="Voucher State Query" Value="vouState"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Clients &amp; Account" Value="acm" Expanded="False">
+                                    <asp:TreeNode Text="Manage Client Register" Value="acchld" NavigateUrl="~/Forms/frmMngCilentList.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Client Account" Value="acqr" NavigateUrl="~/Forms/frmMngClientAccount.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Account Refill" Value="acrf"></asp:TreeNode>
+                                    <asp:TreeNode Text="Query Account History" Value="qryAccHistory"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Group Acount" Value="msgm" Expanded="True">
+                                    <asp:TreeNode Text="Manage Group " Value="Manage Group"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Group Member" Value="Manage Group Member"></asp:TreeNode>
+                                    <asp:TreeNode Text="Send Group SMS" Value="sbtmsg"></asp:TreeNode>
+                                    <asp:TreeNode Text="Query Request Status" Value="qrymsg"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Mobile Banking" Value="mngMB" Expanded="False">
+                                    <asp:TreeNode Text="Manage Banks" Value="mngBankList" NavigateUrl="~/Forms/frmMngBankList.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Client Bank Account" Value="mngCBAccount" NavigateUrl="~/Forms/frmMngClintBankAccount.aspx"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Mobile cash" Value="Manage Mobile cash" Expanded="False">
+                                    <asp:TreeNode Text="Mcash Setup" Value="Mcash Setup"></asp:TreeNode>
+                                    <asp:TreeNode Text="MCash Dealer" Value="MCash Dealer"></asp:TreeNode>
+                                    <asp:TreeNode Text="MCash Consumer" Value="MCash Consumer"></asp:TreeNode>
+                                    <asp:TreeNode Text="MCash Transaction Inquery" Value="MCash Transaction Inquery"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage Mobile Zone" Value="mmzone" Expanded="False">
+                                    <asp:TreeNode Text="Coverage Area" Value="zoarea" NavigateUrl="~/Forms/frmMZoneCoverageArea.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Cell Sites" Value="clsts" NavigateUrl="~/Forms/frmMZoneCellSites.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Zone" Value="mngzone" NavigateUrl="~/Forms/frmMZoneList.aspx"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Zone Cell" Value="mngzonecell" NavigateUrl="~/Forms/frmMZoneZoneCellSites.aspx"></asp:TreeNode>
+                                    <asp:TreeNode NavigateUrl="~/Forms/frmMZoneCB_Message.aspx" Text="Manage CB Message"
+                                        Value="mngcbm"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Zone Packages" Value="mngznpkg" NavigateUrl="~/Forms/frmMZonePackages.aspx"></asp:TreeNode>
+                                </asp:TreeNode>
+                                <asp:TreeNode Text="Manage APSNG" Value="mngapsng" Expanded="False">
+                                    <asp:TreeNode Text="Manage Promotion Services" Value="mngPromoSrv">
+                                        <asp:TreeNode NavigateUrl="~/Forms/frmAPSNG_IN_Packages.aspx" Text="Manage IN Packages"
+                                            Value="mngIN_Pkg"></asp:TreeNode>
+                                        <asp:TreeNode Text="Manage Rent Services" Value="mngRentSrv">
+                                            <asp:TreeNode Text="Package Change Rule" Value="pkgChngRule" NavigateUrl="~/Forms/frmAPSNG_Pkg_Change_Rule.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="Package Change Bonus" Value="pkgChngBonus" NavigateUrl="~/Forms/frmAPSNG_PKG_ChangeBonus.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="Package Change Message" Value="pkgChngMsg" NavigateUrl="~/Forms/frmAPSNG_PKG_Change_Message.aspx"></asp:TreeNode>
+                                            <asp:TreeNode Text="Package Change History" Value="pkgChngHistory"></asp:TreeNode>
+                                        </asp:TreeNode>
+                                        <asp:TreeNode Text="Manage Consumption Services" Value="mngConsumSrv"></asp:TreeNode>
+                                    </asp:TreeNode>
+                                    <asp:TreeNode Text="Manage EVC" Value="mngEvc">
+                                        <asp:TreeNode Text="Manage Dealer Area" Value="mngDlrArea"></asp:TreeNode>
+                                        <asp:TreeNode Text="Manage Dealer Hierchy" Value="mngDlrHrchy"></asp:TreeNode>
+                                        <asp:TreeNode Text="Manage Dealaer Transactions" Value="mngDlrTrnsac"></asp:TreeNode>
+                                        <asp:TreeNode Text="Dealer Transactio History" Value="dlrTranHstry"></asp:TreeNode>
+                                    </asp:TreeNode>
+                                    <asp:TreeNode Text="Mange Postpaid Bills" Value="mngPostBills"></asp:TreeNode>
+                                    <asp:TreeNode Text="Manage Dash Board" Value="mngDashBoard"></asp:TreeNode>
+                                </asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                    </asp:TreeView>
+                </td>
+                <td align=left valign=top style="height: 435px; background-color: lightgrey;" >
+                    <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                    <IFRAME id="Iframe1" runat="server" scrolling="auto" width="100%" height="100%" frameborder="0"></IFRAME>
+
+                    </asp:contentplaceholder>
+                </td>
+            </tr>
+        
+        </table>
+    </div>
+    <div style="background-color: lightsteelblue; text-align: center;">
+        <span style="font-size: 10pt">© 2007-2009 Nodisha Infotech Ltd. All rights reserved.</span></div>
+    </form>
+</body>
+</html>
